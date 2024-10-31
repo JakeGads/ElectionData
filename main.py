@@ -11,7 +11,7 @@ def get_data():
     def get_state_data(state):
         print("Grabbing data for " + state)
         state = state.lower().replace(" ", "-")
-        url = Template("https://static01.nyt.com/elections-assets/2020/data/api/2020-11-03/state-page/${state}.json")
+        url = Template("https://static01.nyt.com/elections-assets/2024/data/api/2024-11-05/state-page/${state}.json")
         response = requests.get(url.substitute(state=state))
         data = response.json()['data']
         return data
