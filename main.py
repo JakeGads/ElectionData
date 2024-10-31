@@ -64,13 +64,13 @@ def process_data(file_list):
         for index, i in enumerate(cannidates):
             if index > 2: break
             f.write(f"{i.name} - {i.popular}\n")
+    print("Data Processed")
 
 if __name__ == "__main__":
     last = 0
     while True:
-        if time.time() > last+ (5 * 60 * 60) or os.path.exists("state_data.csv") == False:
-            pass
-            # get_data()
+        if time.time() > last+ (5 * 60 * 60) or os.path.exists("data") == False:
+            get_data()
         process_data(glob(os.path.join("data", "*.json")))
         
         time.sleep(60 * 60)
